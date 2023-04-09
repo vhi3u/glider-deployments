@@ -1,2 +1,2 @@
 # ramses-deployments
-CTD and ECO data from Ramses Glider Deployments. 
+Visualizations/graphs of CTD and ECO data from Ramses Glider Deployments. 
