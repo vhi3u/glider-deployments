@@ -1,6 +1,4 @@
-%Preloading file 
-file_name = input("Please enter the name of the file: ");
-r3b = load(file_name);
+
 %Establishing chlor
 baseChlor = r3b.chlor * NaN;
 baseCDOM = r3b.cdom * NaN;
@@ -60,36 +58,3 @@ thresholdCDOM = prctile(spikeCDOM, 95);
 spikeCDOM(spikeCDOM < thresholdCDOM*2) = 0;
 thresholdScatter = prctile(spikeScatter, 90);
 spikeScatter(spikeScatter < thresholdScatter*2) = 0;
-
-% figure
-% plot(r3b.ptime_datenum, r3b.chlor)
-% hold on
-% plot(r3b.ptime_datenum,baseChlor)
-% spikeplusChlor = spikeChlor;
-% spikeplusChlor(spikeChlor > 0) = spikeChlor(spikeChlor > 0)+baseChlor(spikeChlor > 0);
-% plot(r3b.ptime_datenum,spikeplusChlor, 'r.')
-% title(sprintf('%s',file_name),"Chlorophyll with Spikes",'Interpreter','none')
-% export_fig ('/Users/victornguyen/Documents/MATLAB/Ramses/ramsesMasterfigures/spikeChlor.png', '-m3', '-nocrop');
-% hold off
-% 
-% figure
-% plot(r3b.ptime_datenum, r3b.cdom)
-% hold on
-% plot(r3b.ptime_datenum, baseCDOM)
-% spikeplusCDOM = spikeCDOM;
-% spikeplusCDOM(spikeCDOM > 0) = spikeCDOM(spikeCDOM > 0)+baseCDOM(spikeCDOM > 0);
-% plot(r3b.ptime_datenum,spikeplusCDOM, 'r.')
-% title(sprintf('%s',file_name),"CDOM with Spikes",'Interpreter','none')
-% export_fig ('/Users/victornguyen/Documents/MATLAB/Ramses/ramsesMasterfigures/spikeCdom.png', '-m3', '-nocrop');
-% hold off
-% 
-% figure
-% plot(r3b.ptime_datenum, r3b.scatter)
-% hold on
-% plot(r3b.ptime_datenum, baseScatter)
-% spikeplusScatter = spikeScatter;
-% spikeplusScatter(spikeScatter > 0) = spikeScatter(spikeScatter > 0)+baseScatter(spikeScatter > 0);
-% plot(r3b.ptime_datenum,spikeplusScatter, 'r.')
-% title(sprintf('%s',file_name),"Scatter with Spikes",'Interpreter','none')
-% export_fig ('/Users/victornguyen/Documents/MATLAB/Ramses/ramsesMasterfigures/spikeScatter.png', '-m3', '-nocrop');
-% hold off
